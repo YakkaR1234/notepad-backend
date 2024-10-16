@@ -255,6 +255,10 @@ app.get("/search-notes/", authenticateToken, async (req, res) => {
     }
 });
 
+app.get('/',(req,res)=>{
+    res.send("Hello from server");
+})
+
 
 app.listen(9000, () => console.log('Server running on port 9000'));
 module.exports = app;
