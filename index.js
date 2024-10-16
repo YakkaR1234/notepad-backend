@@ -16,7 +16,15 @@ const Note = require("./models/note.model");
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+// app.use(cors({ origin: "*" }));
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
+ 
+ app.use(cors(corsOptions)) 
+ app.use(cors())
 
 // Create account
 app.post("/create-account", async (req, res) => {
