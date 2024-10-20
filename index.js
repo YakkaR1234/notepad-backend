@@ -27,9 +27,19 @@ const corsOptions = {
   optionsSuccessStatus: 200, // Some browsers (e.g., Safari) need this status for success
 };
 
-app.use(cors(corsOptions)); // Only use cors once with options
+// const corsOptions ={
+//   origin:'*', 
+//   credentials:true,            //access-control-allow-credentials:true
+//   optionSuccessStatus:200,
+// }
 
-app.options("*", cors(corsOptions)); // Handle preflight requests for all routes
+app.use(cors(corsOptions)) 
+app.use(cors()) 
+
+dotenv.config();
+
+
+
 
 // Create account
 app.post("/create-account", async (req, res) => {
