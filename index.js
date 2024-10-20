@@ -1,4 +1,4 @@
-require("dotenv").config();
+const dotenv=require("dotenv");
 
 const config = require("./config.json");
 const mongoose = require("mongoose");
